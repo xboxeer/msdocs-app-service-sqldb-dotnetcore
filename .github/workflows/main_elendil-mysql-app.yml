@@ -28,6 +28,9 @@ jobs:
       - name: dotnet publish
         run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
 
+      - name: dotnet creat manifest for ef tool
+        run: dotnet new tool-manifest
+
       - name: dotnet ef install
         run: dotnet tool install dotnet-ef
 
